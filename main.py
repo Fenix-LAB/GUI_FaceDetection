@@ -98,8 +98,8 @@ class Work(QThread):
                 for (x, y, w, h) in faces:
                     cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
 
-                #Image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-                flip = cv2.flip(frame, 1)
+                Image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                flip = cv2.flip(Image, 1)
                 frameu = imutils.resize(flip, width=640, height=480)
                 pic = QImage(frameu.data, frameu.shape[1], frameu.shape[0], QImage.Format_RGB888)
                 #pic = convertir_QT.scaled(320, 240, Qt.KeepAspectRatio)
